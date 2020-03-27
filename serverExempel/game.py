@@ -46,10 +46,10 @@ def playGame():
                         varmove = str(inCol)
                         requests.get(f'http://127.0.0.1:5000/{placeholder}', data={'move':varmove})
                         funk.fillBoard(RAD,KOLUMN)                            
-                    else:
-                        turn -= 1
+                    else:                        
                         os.system('cls')
                         print('\nInvalid location, try again\n')
+                        turn -= 1
             except ValueError:
                 os.system('cls')
                 print('\nThis is not a number\n')

@@ -9,13 +9,16 @@ import sys
 RAD = 6
 KOLUMN = 7
 
+#Skapar en 2d array utav nollor
 def boardCreate(Rad, Kolumn):
-    board = np.zeros((Rad,Kolumn))
+    board = np.((Rad,Kolumn))
     return board
 
+#bestämmer vart objektet/pjäsen släpps
 def dropObject(board, row, col, obj):
     board[row][col] = obj
 
+#Kollar om kolumnen är tillgänglig för att 
 def validLoc(board, col):
     return board[RAD-1][col] == 0
 
@@ -23,6 +26,7 @@ def getOpenRow(board, col, rad):
     for r in range(rad):
         if board[r][col] == 0:
             return r
+
 
 def flipBoard(board):
     print(np.flip(board, 0))
